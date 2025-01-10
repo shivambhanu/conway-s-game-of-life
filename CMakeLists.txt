@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.30)
 project(GameOne)
 set(CMAKE_CXX_STANDARD 23)
-add_executable(GameOne main.cpp)
+add_executable(GameOne main.cpp
+        grid.h
+        grid.cpp)
 
 # ------------------------------------------
 
