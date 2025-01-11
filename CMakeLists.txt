@@ -3,7 +3,9 @@ project(GameOne)
 set(CMAKE_CXX_STANDARD 23)
 add_executable(GameOne main.cpp
         grid.h
-        grid.cpp)
+        grid.cpp
+        simulation.h
+        Simulation.cpp)
 
 # ------------------------------------------
 

@@ -63,6 +63,13 @@ build CMakeFiles/GameOne.dir/grid.cpp.o: CXX_COMPILER__GameOne_unscanned_Debug /
   OBJECT_DIR = CMakeFiles/GameOne.dir
   OBJECT_FILE_DIR = CMakeFiles/GameOne.dir
 
+build CMakeFiles/GameOne.dir/Simulation.cpp.o: CXX_COMPILER__GameOne_unscanned_Debug /Users/shivam/CLionProjects/GameOne/Simulation.cpp || cmake_object_order_depends_target_GameOne
+  DEP_FILE = CMakeFiles/GameOne.dir/Simulation.cpp.o.d
+  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  INCLUDES = -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/GameOne.dir
+  OBJECT_FILE_DIR = CMakeFiles/GameOne.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target GameOne
@@ -71,7 +78,7 @@ build CMakeFiles/GameOne.dir/grid.cpp.o: CXX_COMPILER__GameOne_unscanned_Debug /
 #############################################
 # Link the executable GameOne
 
-build GameOne: CXX_EXECUTABLE_LINKER__GameOne_Debug CMakeFiles/GameOne.dir/main.cpp.o CMakeFiles/GameOne.dir/grid.cpp.o | /opt/homebrew/lib/libraylib.dylib
+build GameOne: CXX_EXECUTABLE_LINKER__GameOne_Debug CMakeFiles/GameOne.dir/main.cpp.o CMakeFiles/GameOne.dir/grid.cpp.o CMakeFiles/GameOne.dir/Simulation.cpp.o | /opt/homebrew/lib/libraylib.dylib
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk
   LINK_LIBRARIES = /opt/homebrew/lib/libraylib.dylib  -framework CoreVideo  -framework IOKit  -framework Cocoa  -framework OpenGL
   OBJECT_DIR = CMakeFiles/GameOne.dir

@@ -3,6 +3,29 @@
 #include <iostream>
 using namespace std;
 
+// Use const for functions that do not modify the state of the object (e.g., getter functions like getColumns).
+bool Grid::isCellValid(int row, int column) const
+{
+    if (row >= 0 && row < rows && column >= 0 && column < columns)
+        return true;
+    return false;
+}
+
+int Grid::getRows() const
+{
+    return rows;
+}
+
+int Grid::getColumns() const
+{
+    return columns;
+}
+
+bool Grid::getCell(int row, int column)
+{
+    return isCellValid(row, column) ? cells[row][column] : false;
+}
+
 void Grid::Draw()
 {
     for (int row = 0; row < rows; row++)
@@ -17,8 +40,8 @@ void Grid::Draw()
 
 void Grid::setCell(int row, int column)
 {
-    if (row >= 0 && row < rows && column >= 0 && column < columns)
-        cells[row][column] = 1;
+    if (isCellValid(row, column))
+        cells[row][column] = true;
     else
         cout << "Invalid cell coordinate";
 }
