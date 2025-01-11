@@ -24,3 +24,29 @@ int Simulation::countLiveNeighbours(int row, int column)
     }
     return live_neighbours;
 }
+
+void Simulation::updateGrid()
+{
+    for (int row = 0; row < grid.getRows(); row++)
+    {
+        for (int column = 0; column < grid.getColumns(); column++)
+        {
+            int live_neighbours = countLiveNeighbours(row, column);
+
+            if (grid.getCell(row, column))
+            {
+                if (live_neighbours < 2 || live_neighbours > 3)
+                    temp_grid.unsetCell(row, column);
+                else
+                    temp_grid.setCell(row, column);
+            }else
+            {
+                if (live_neighbours == 3)
+                    temp_grid.setCell(row, column);
+                else
+                    temp_grid.unsetCell(row, column);
+            }
+        }
+    }
+    grid = temp_grid;
+}

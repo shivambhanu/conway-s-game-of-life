@@ -1,6 +1,7 @@
 #include "grid.h"
 #include <raylib.h>
 #include <iostream>
+#include <random>
 using namespace std;
 
 // Use const for functions that do not modify the state of the object (e.g., getter functions like getColumns).
@@ -44,4 +45,24 @@ void Grid::setCell(int row, int column)
         cells[row][column] = true;
     else
         cout << "Invalid cell coordinate";
+}
+
+void Grid::unsetCell(int row, int column)
+{
+    if (isCellValid(row, column))
+        cells[row][column] = false;
+    else
+        cout << "Invalid cell coordinate";
+}
+
+void Grid::initiateGrid()
+{
+    for (int row = 0; row < rows; row++)
+    {
+        for (int column = 0; column < columns; column++)
+        {
+            int random_value = GetRandomValue(0, 4);  // a function from raylib library
+            cells[row][column] = (random_value == 4);
+        }
+    }
 }
