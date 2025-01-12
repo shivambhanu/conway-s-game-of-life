@@ -17,7 +17,16 @@ int main()
     while (!WindowShouldClose())
     {
         // Event Handling
-
+        if (IsKeyPressed(KEY_ENTER))
+        {
+            simulation.start();
+            SetWindowTitle("Game of Life is running...");
+        }
+        else if (IsKeyPressed(KEY_SPACE))
+        {
+            simulation.stop();
+            SetWindowTitle("Game of Life has stopped!");
+        }
         // Updating States
         simulation.updateGrid();
 
