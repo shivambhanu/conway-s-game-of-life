@@ -53,3 +53,21 @@ void Simulation::updateGrid()
         grid = temp_grid;
     }
 }
+
+void Simulation::clearGrid()
+{
+    if (!isRunning())
+        grid.clear();
+}
+
+void Simulation::createRandomState()
+{
+    if (!isRunning())
+        grid.initiateGrid();
+}
+
+void Simulation::toggleCell(int row, int column)
+{
+    if (!isRunning())
+        grid.toggleCell(row, column);
+}

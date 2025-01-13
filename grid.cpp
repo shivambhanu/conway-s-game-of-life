@@ -66,3 +66,16 @@ void Grid::initiateGrid()
         }
     }
 }
+
+void Grid::clear()
+{
+    for (int row = 0; row < rows; row++)
+        for (int column = 0; column < columns; column++)
+            cells[row][column] = false;
+}
+
+void Grid::toggleCell(int row, int column)
+{
+    if (isCellValid(row, column))
+        cells[row][column] = !cells[row][column];
+}

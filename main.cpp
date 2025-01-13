@@ -17,6 +17,13 @@ int main()
     while (!WindowShouldClose())
     {
         // Event Handling
+        if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
+        {
+            Vector2 mouse_position = GetMousePosition();
+            int row = mouse_position.y / CELL_SIZE;
+            int column = mouse_position.x / CELL_SIZE;
+            simulation.toggleCell(row, column);
+        }
         if (IsKeyPressed(KEY_ENTER))
         {
             simulation.start();
@@ -27,6 +34,16 @@ int main()
             simulation.stop();
             SetWindowTitle("Game of Life has stopped!");
         }
+        else if (IsKeyPressed(KEY_C))
+        {
+            simulation.clearGrid();
+        }
+        else if (IsKeyPressed(KEY_R))
+        {
+            simulation.createRandomState();
+        }
+        // TODO: Add the feature to increase FPS and decrease FPS by pressing up and down arrow respectively.
+
         // Updating States
         simulation.updateGrid();
 

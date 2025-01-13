@@ -14,8 +14,9 @@ public:
     void Draw();
     void setCell(int row, int column);
     void unsetCell(int row, int column);
-    bool createRandomBool();
     void initiateGrid();  // fill every cells in grid with either true or false randomly
+    void clear();
+    void toggleCell(int row, int column);
 private:
     int rows;
     int columns;
